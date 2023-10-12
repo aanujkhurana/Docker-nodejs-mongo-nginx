@@ -1,0 +1,48 @@
+version: "3.9"
+services:
+  shop-app:
+    container_name: shop-app
+    image: my-shop-app
+    build: .
+    depends_on: 
+      - mongo
+    ports:
+      - 3000:3000
+    networks:
+      - backend
+    volumes:
+      - ./:/usr/src/app
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./mongodata:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - backend
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/shop_db
+      - MONGO_DEFAULT_DATABASE=shop_db
+
+  mongoexpress:
+    container_name: mongoexpress
+    image: mongo-express
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    ports:
+      - 8080:8081
+    networks:
+      - backend
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=123456
+
+volumes:
+  mongodata:
+networks:
+  backend:
