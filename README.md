@@ -1,6 +1,7 @@
 # Docker 
-make sure docker is engine is up and running;
-`docker compose up`
+make sure docker is engine is up and running, then:
+
+# `docker compose up`
 
 will start 4 containers:
 frontend 
