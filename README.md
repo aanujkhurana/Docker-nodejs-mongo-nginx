@@ -5,14 +5,16 @@ make sure docker is engine is up and running, then:
 docker compose up
 ```
 
-will start 4 containers:
-frontend 
-backend 
-backend-GUI
-reverse proxy
+this will start 4 containers:
+- frontend (node.js)
+- backend (mongo)
+- backend-GUI (mongoExpress)
+- reverse proxy (nginx)
 
-
-
+Visit;
+- Frontend: [localhost:3000](http://localhost:300)
+- Backend: [localhost:8080](http://localhost:8080)
+user: admin Pass: 123456
 
 # nodejs-shop
 
