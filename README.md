@@ -1,12 +1,14 @@
 # Docker 
 make sure docker is engine is up and running, then:
 
-# `docker compose up`
+```
+docker compose up
+```
 
 will start 4 containers:
 frontend 
 backend 
-backend GUI
+backend-GUI
 reverse proxy
 
 
