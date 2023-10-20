@@ -1,3 +1,16 @@
+# Docker 
+make sure docker is engine is up and running;
+`docker compose up`
+
+will start 4 containers:
+frontend 
+backend 
+backend GUI
+reverse proxy
+
+
+
+
 # nodejs-shop
 
 Online shop built using Node.js, Express, and MongoDB/Mongoose. The user can create an account, reset their password, add and remove cart items, upload and delete products, update data for products they added, checkout their cart, place orders, and view past orders.
